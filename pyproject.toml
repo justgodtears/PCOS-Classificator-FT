@@ -7,7 +7,10 @@ authors = [
     { name = "justgodtears", email = "oopyrchal@pm.me" }
 ]
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+  "torch>=2.11.0",
+  "torchvision>=0.26.0",
+]
 
 [project.scripts]
 pcos-ft = "pcos_ft:main"
@@ -15,3 +18,11 @@ pcos-ft = "pcos_ft:main"
 [build-system]
 requires = ["uv_build>=0.13.5,<0.14.0"]
 build-backend = "uv_build"
+
+[tool.uv.sources]
+torch = {index = "pytorch-cu132"}
+
+[[tool.uv.index]]
+name = "pytorch-cu132"
+url = "https://download.pytorch.org/whl/cu132"
+explicit = true
