@@ -1,2 +1,3 @@
-print("Hello from pcos-ft!")
-print("Hello from pcos-ft!")
+import torch
+
+print(torch.cuda.is_available())
